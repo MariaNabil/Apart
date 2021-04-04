@@ -10,7 +10,7 @@ export default Address = props => {
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
 
-  renderMap = () => {
+  const renderMap = () => {
     if (latitude && longitude) {
       return (
         <MapView
@@ -21,7 +21,7 @@ export default Address = props => {
           }}
           style={{
             width: '100%',
-            height: 200,
+            height: 500,
             marginTop: 20,
           }}
           showsUserLocation={false}
@@ -83,6 +83,9 @@ export default Address = props => {
           value={text}
           placeholder={'Search Address'}></TextInput>
       </View>
+
+      {/* needs an API KEY */}
+      {/* {renderMap()} */}
     </View>
   );
 };
