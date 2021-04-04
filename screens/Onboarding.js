@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, StatusBar, TouchableOpacity, View, Text} from 'react-native';
+import {Image, StatusBar, View, Text} from 'react-native';
 import {lightGrayColor, statusBarColor} from '../constants/Colors';
 import CustomButton from '../partial-components/CustomButton';
 
@@ -11,7 +11,7 @@ export default Onboarding = props => {
         alignItems: 'center',
         alignSelf: 'stretch',
       }}>
-      <StatusBar backgroundColor={statusBarColor} translucent={true} />
+      <StatusBar backgroundColor={statusBarColor} translucent={false} />
       <View style={{flex: 1 / 2}}>
         <Image
           resizeMode={'stretch'}
@@ -55,21 +55,6 @@ export default Onboarding = props => {
             }
           </Text>
         </View>
-        {/* <TouchableOpacity
-          onPress={() => {
-            props.navigation.navigate('Login');
-          }}>
-          <Text
-            style={{
-              color: 'white',
-              textAlign: 'center',
-              paddingVertical: 10,
-              borderRadius: 20,
-              backgroundColor: '#18573a',
-            }}>
-            {'Get Started'}
-          </Text>
-        </TouchableOpacity> */}
         <CustomButton
           title={'Get Started'}
           onPress={() => {

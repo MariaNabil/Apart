@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, ScrollView, Text, View} from 'react-native';
+import {Image, Text, View} from 'react-native';
 import {lightGray, redColor} from '../constants/Colors';
 import {defaultFontSize} from '../constants/Styles';
 import CustomButton from '../partial-components/CustomButton';
@@ -28,7 +28,7 @@ export default Login = props => {
       <CustomButton
         title={'Login'}
         onPress={() => {
-          // props.navigation.navigate('Login');
+          props.navigation.navigate('Home');
         }}></CustomButton>
 
       <Text

@@ -1,6 +1,7 @@
-import {Text, TouchableOpacity, View} from 'react-native';
+import { Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
 export default CustomHeader = props => {
   return (
@@ -8,10 +9,21 @@ export default CustomHeader = props => {
       style={{
         flexDirection: 'row',
         alignItems: 'center',
-        height: 90,
+        height: 60,
       }}>
-      <TouchableOpacity onPress={() => props.navigation.goBack()}>
-        <MaterialIcons name={`arrow-back-ios`} size={22} color={'black'} />
+      <TouchableOpacity
+        onPress={() => {
+          if (props.isDrawer) {
+            props.navigation.toggleDrawer();
+          } else {
+            props.navigation.goBack();
+          }
+        }}>
+        {props.isDrawer ? (
+          <SimpleLineIcons name="menu" color={'black'} size={22} />
+        ) : (
+          <MaterialIcons name={`arrow-back-ios`} size={22} color={'black'} />
+        )}
       </TouchableOpacity>
       <Text
         style={{

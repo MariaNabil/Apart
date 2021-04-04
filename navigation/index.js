@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import Onboarding from '../screens/Onboarding';
 import {SafeAreaView} from 'react-native';
 import Login from '../screens/Login';
-// import AddMovie from '../controllers/AddMovie';
+import {AppNavigator} from './AppNavigator';
 
 const Stack = createStackNavigator();
 
@@ -32,15 +32,7 @@ export default function Navigation() {
             }}
           />
           <Stack.Screen name="Login" component={Login} />
-          {/* <Stack.Screen
-            name="Add Movie"
-            component={AddMovie}
-            options={{
-              headerStyle: {
-                backgroundColor: '#F5FCFF',
-              },
-              headerTitleStyle: {},
-            }}></Stack.Screen> */}
+          <Stack.Screen name="Home" component={AppNavigator} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
